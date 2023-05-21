@@ -224,7 +224,7 @@ const ConversationComponent = () => {
                                     >
                                         <Upload
                                             name="file"
-                                            action="http://localhost:5000/file"
+                                            action="https://ws-bot-o7sd.onrender.com/file"
                                             listType="picture-circle"
                                             fileList={fileList}
                                             onPreview={handlePreview}

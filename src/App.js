@@ -63,7 +63,7 @@ function App() {
             status === "notLogged" || status === "qrReadFail"
               ?
               <Container>
-                <div><img src="http://localhost:5000/qr" /></div>
+                <div><img src="https://ws-bot-o7sd.onrender.com/qr" /></div>
               </Container>
               :
               status === 'successChat'
