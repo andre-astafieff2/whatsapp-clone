@@ -90,6 +90,7 @@ const ConversationComponent = () => {
     const [somaLista, addlista] = useState(0);
     const handleCancel = () => setPreviewOpen(false);
     const fechaPost = () => setPreviewPost(false);
+    const tagUpload = "https://ws-bot-o7sd.onrender.com/file"
 
     const handlePreview = async (file) => {
         if (!file.url && !file.preview) {
@@ -224,7 +225,7 @@ const ConversationComponent = () => {
                                     >
                                         <Upload
                                             name="file"
-                                            action="https://ws-bot-o7sd.onrender.com/file"
+                                            action={tagUpload}
                                             listType="picture-circle"
                                             fileList={fileList}
                                             onPreview={handlePreview}

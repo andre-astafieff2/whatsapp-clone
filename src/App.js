@@ -26,8 +26,10 @@ function App() {
       await api
         .get("/sts")
         .then((response) => {
-          setaStatus(response.data.status)
-          //console.log(response.data.status)
+          setaStatus(response.data)
+
+          //console.log("chamou api", response.data)
+
         })
         .catch((err) => {
           setaStatus('ERRO')
@@ -49,37 +51,49 @@ function App() {
 
   }, []);
 
+  useEffect(() => {
+
+
+    console.log(status)
+
+  }, [status]);
+
+  const testeRender = (status) => {
+    if (status === "ERRO") {
+      return (
+        <div>API fora do ar, tente mais tarde</div>
+      )
+    } else if (status === "waitForLogin" || status === "notLogged" || status === "qrReadFail" || status === "deviceNotConnected") {
+      return (
+        <Container>
+          <div><img src="https://ws-bot-o7sd.onrender.com/qr" /></div>
+        </Container>
+      )
+    } else if (status === "waitChat") {
+      return (
+        <div>Aguarde...</div>
+      )
+    } else if (status === "chatsAvailable") {
+      return (
+        <Container>
+          <ClientesContext.Provider value={{ lista, setLista }}>
+            <ContactListComponent />
+            <ConversationComponent />
+          </ClientesContext.Provider>
+        </Container>
+      )
+    } else {
+      return (
+        <div>aguarde o carregamento do sistema</div>
+      )
+    }
+  }
+
+
+
   return (
     <div>
-      {
-        status === "ERRO"
-          ?
-          <div>API fora do ar, tente mais tarde</div>
-          :
-          status === "waitForLogin"
-            ?
-            <div>aguarde a geração do QR Code</div>
-            :
-            status === "notLogged" || status === "qrReadFail"
-              ?
-              <Container>
-                <div><img src="https://ws-bot-o7sd.onrender.com/qr" /></div>
-              </Container>
-              :
-              status === 'successChat' || status === 'successPageWhatsapp'
-                ?
-
-                <Container>
-                  <ClientesContext.Provider value={{lista, setLista}}>
-                    <ContactListComponent />
-                    <ConversationComponent />
-                  </ClientesContext.Provider>
-                </Container>
-
-                :
-                <div>aguarde o carregamento do sistema</div>
-      }
-
+      {testeRender(status)}
     </div>
   );
 }
