@@ -66,7 +66,7 @@ function App() {
                 <div><img src="https://ws-bot-o7sd.onrender.com/qr" /></div>
               </Container>
               :
-              status === 'successChat'
+              status === 'successChat' || status === 'successPageWhatsapp'
                 ?
 
                 <Container>
