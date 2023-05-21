@@ -73,7 +73,7 @@ function App() {
       return (
         <div>Aguarde...</div>
       )
-    } else if (status === "chatsAvailable") {
+    } else if (status === "chatsAvailable" || status === "successChat") {
       return (
         <Container>
           <ClientesContext.Provider value={{ lista, setLista }}>
