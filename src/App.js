@@ -26,8 +26,8 @@ function App() {
       await api
         .get("/sts")
         .then((response) => {
-          setaStatus(response.data)
-          //console.log(response.data)
+          setaStatus(response.data.status)
+          //console.log(response.data.status)
         })
         .catch((err) => {
           setaStatus('ERRO')
