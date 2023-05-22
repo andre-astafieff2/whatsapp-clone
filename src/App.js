@@ -66,7 +66,7 @@ function App() {
     } else if (status === "waitForLogin" || status === "notLogged" || status === "qrReadFail" || status === "deviceNotConnected") {
       return (
         <Container>
-          <div><img src="https://ws-bot-o7sd.onrender.com/qr" /></div>
+          <div><img src="http://ec2-3-136-22-22.us-east-2.compute.amazonaws.com:5000/qr" /></div>
         </Container>
       )
     } else if (status === "waitChat") {
