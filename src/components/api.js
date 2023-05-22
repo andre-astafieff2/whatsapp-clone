@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://ec2-3-136-22-22.us-east-2.compute.amazonaws.com:5000",
+  baseURL: "https://ws-bot-o7sd.onrender.com",
 });
 
 export default api;
