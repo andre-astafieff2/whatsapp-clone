@@ -21,6 +21,7 @@ function App() {
   const [lista, setLista] = useState([])
 
 
+  
   useEffect(() => {
     async function StatusWS() {
       await api
