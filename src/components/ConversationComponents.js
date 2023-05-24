@@ -90,7 +90,7 @@ const ConversationComponent = () => {
     const [somaLista, addlista] = useState(0);
     const handleCancel = () => setPreviewOpen(false);
     const fechaPost = () => setPreviewPost(false);
-    const tagUpload = "https://ws-bot-o7sd.onrender.com/file"
+    const tagUpload = "http://ec2-18-222-70-110.us-east-2.compute.amazonaws.com:8080/file"
 
     const handlePreview = async (file) => {
         if (!file.url && !file.preview) {
